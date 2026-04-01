@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Executive Summary + 시장 기회 + 경쟁 구도 분석 (MKT-01, MKT-02)
+- [x] 01-01-PLAN.md — Executive Summary + 시장 기회 + 경쟁 구도 분석 (MKT-01, MKT-02)
 - [ ] 01-02-PLAN.md — White Space 차별화 전략 + 전략적 시사점 + 출처 (MKT-03)
 
 ### Phase 2: Product Vision & Core PRD
@@ -104,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Market Foundation | 0/2 | Planning complete | - |
+| 1. Market Foundation | 1/2 | In Progress | - |
 | 2. Product Vision & Core PRD | 0/TBD | Not started | - |
 | 3. PRD Completion & Pricing | 0/TBD | Not started | - |
 | 4. UX Wireframes | 0/TBD | Not started | - |

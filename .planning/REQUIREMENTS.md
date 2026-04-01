@@ -36,8 +36,8 @@
 
 ### MKT (시장 분석)
 
-- [ ] **MKT-01**: 경쟁사 분석 대비 포지셔닝 -- KT 69% 점유, 통신 3사 전략 대응, 글로벌 플레이어 부재 분석
-- [ ] **MKT-02**: 한국 AICC 시장 규모 및 성장 추세 -- 3.5조원, CAGR 23.7%, Agentic AI 전환 트렌드
+- [x] **MKT-01**: 경쟁사 분석 대비 포지셔닝 -- KT 69% 점유, 통신 3사 전략 대응, 글로벌 플레이어 부재 분석
+- [x] **MKT-02**: 한국 AICC 시장 규모 및 성장 추세 -- 3.5조원, CAGR 23.7%, Agentic AI 전환 트렌드
 - [ ] **MKT-03**: "뾰족한 강점" 차별화 요소 정의 -- 성과 기반 과금 x 컴플라이언스 엔진 복합 전략
 
 ## v2 Requirements
@@ -65,8 +65,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MKT-01 | Phase 1 | Pending |
-| MKT-02 | Phase 1 | Pending |
+| MKT-01 | Phase 1 | Complete |
+| MKT-02 | Phase 1 | Complete |
 | MKT-03 | Phase 1 | Pending |
 | PRD-01 | Phase 2 | Pending |
 | PRD-02 | Phase 2 | Pending |
