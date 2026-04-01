@@ -23,10 +23,10 @@
 ### Active
 
 **[PRD]**
-- [ ] PRD-01: 제품 비전 및 포지셔닝 정의 (기존 구축형 vs 신규 SaaS 포지셔닝)
-- [ ] PRD-02: 타겟 고객 세그먼트 및 페르소나 정의 (금융·보험·이커머스 3개 산업별)
-- [ ] PRD-03: 핵심 기능 정의 — 보이스봇 MVP 기능셋
-- [ ] PRD-04: 핵심 기능 정의 — Agent Assist MVP 기능셋
+- [x] PRD-01: 제품 비전 및 포지셔닝 정의 (기존 구축형 vs 신규 SaaS 포지셔닝) — Validated in Phase 02
+- [x] PRD-02: 타겟 고객 세그먼트 및 페르소나 정의 (금융·보험·이커머스 3개 산업별) — Validated in Phase 02
+- [x] PRD-03: 핵심 기능 정의 — 보이스봇 MVP 기능셋 — Validated in Phase 02
+- [x] PRD-04: 핵심 기능 정의 — Agent Assist MVP 기능셋 — Validated in Phase 02
 - [ ] PRD-05: 기존 자산 활용 계획 vs 신규 개발 범위 명세
 - [ ] PRD-06: 기능 우선순위 (MVP / Phase 2 / Future) 매트릭스
 - [ ] PRD-07: 성공 지표 (KPI) 정의
@@ -82,4 +82,4 @@
 | 셀프 온보딩 화면 신규 개발 | 구축형의 긴 PoC 기간을 단축, SaaS 확장성 핵심 | — Pending |
 
 ---
-*Last updated: 2026-04-02 after Phase 01 (market-foundation) completion — 시장 분석 전략 제안서 완성*
+*Last updated: 2026-04-02 after Phase 02 (product-vision-core-prd) completion — 10페이지 이내 통합 PRD 문서 완성 (비전/포지셔닝, 6명 페르소나, 보이스봇 MVP, Agent Assist MVP)*
