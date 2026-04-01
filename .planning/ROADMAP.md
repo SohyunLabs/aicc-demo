@@ -45,11 +45,11 @@ Plans:
   3. 보이스봇 MVP 기능셋이 산업 공통 + 산업별 특화로 구분되고, 출처 추적 응답과 할루시네이션 가드가 Day 1 필수로 포함되어 있다
   4. Agent Assist MVP 기능셋(실시간 전사/요약/추천 응답/컴플라이언스 경고)이 상담원 워크플로우 기준으로 정의되어 있다
   5. 두 제품의 기능 목록을 읽은 사람이 "이 제품이 무엇을 하는지" 바로 이해할 수 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md — Executive Summary + 제품 비전/포지셔닝 + 6개 바이어 페르소나 (PRD-01, PRD-02)
+- [ ] 02-02-PLAN.md — 보이스봇 MVP 기능셋 + Agent Assist MVP 기능셋 + 기능 요약 매트릭스 + 최종 검토 (PRD-03, PRD-04)
 
 ### Phase 3: PRD Completion & Pricing
 **Goal**: PRD의 실행 가능성(무엇을 새로 만들고, 무엇을 먼저 하고, 어떻게 측정하는지)과 수익 모델이 완성된다
@@ -105,7 +105,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Market Foundation | 2/2 | Complete | 2026-04-02 |
-| 2. Product Vision & Core PRD | 0/TBD | Not started | - |
+| 2. Product Vision & Core PRD | 0/2 | Not started | - |
 | 3. PRD Completion & Pricing | 0/TBD | Not started | - |
 | 4. UX Wireframes | 0/TBD | Not started | - |
 | 5. Product Roadmap Document | 0/TBD | Not started | - |
