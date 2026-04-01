@@ -29,11 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. KT 69% 점유를 포함한 주요 경쟁사(통신 3사, 솔트룩스, 글로벌 플레이어)의 전략과 약점이 비교표로 정리되어 있다
   3. "성과 기반 과금 x 컴플라이언스 엔진" 복합 차별화 전략이 경쟁사 대비 빈 공간(white space)으로 논증되어 있다
   4. 후속 문서(PRD, 가격 전략)에서 인용할 수 있는 구체적 데이터 포인트가 10개 이상 포함되어 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md — Executive Summary + 시장 기회 + 경쟁 구도 분석 (MKT-01, MKT-02)
+- [ ] 01-02-PLAN.md — White Space 차별화 전략 + 전략적 시사점 + 출처 (MKT-03)
 
 ### Phase 2: Product Vision & Core PRD
 **Goal**: 제품의 정체성(누구를 위해, 무엇을, 왜)과 두 핵심 제품(보이스봇, Agent Assist)의 MVP 기능이 확정된다
@@ -99,12 +99,12 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 (Phase 3 and Phase 4 can execute in parallel after Phase 2 completes)
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Market Foundation | 0/TBD | Not started | - |
+| 1. Market Foundation | 0/2 | Planning complete | - |
 | 2. Product Vision & Core PRD | 0/TBD | Not started | - |
 | 3. PRD Completion & Pricing | 0/TBD | Not started | - |
 | 4. UX Wireframes | 0/TBD | Not started | - |
