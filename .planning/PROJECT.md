@@ -45,10 +45,10 @@
 - [ ] PRC-02: SaaS형 가격 구조 (성과 기반 과금 포함)
 - [ ] PRC-03: 경쟁력 있는 가격 포인트 근거
 
-**[시장 분석 — 차별화 근거]**
-- [ ] MKT-01: 경쟁사 분석 (Genesys, 카카오엔터프라이즈, 솔트룩스 등) 대비 포지셔닝
-- [ ] MKT-02: 한국 AICC 시장 규모 및 성장 추세
-- [ ] MKT-03: "뾰족한 강점" 정의 — 뤼튼만이 제공할 수 있는 차별화 요소
+**[시장 분석 — 차별화 근거]** — Validated in Phase 01: market-foundation
+- [x] MKT-01: 경쟁사 분석 (Genesys, 카카오엔터프라이즈, 솔트룩스 등) 대비 포지셔닝
+- [x] MKT-02: 한국 AICC 시장 규모 및 성장 추세
+- [x] MKT-03: "뾰족한 강점" 정의 — 뤼튼만이 제공할 수 있는 차별화 요소
 
 ### Out of Scope
 
@@ -82,4 +82,4 @@
 | 셀프 온보딩 화면 신규 개발 | 구축형의 긴 PoC 기간을 단축, SaaS 확장성 핵심 | — Pending |
 
 ---
-*Last updated: 2026-03-31 after initialization*
+*Last updated: 2026-04-02 after Phase 01 (market-foundation) completion — 시장 분석 전략 제안서 완성*
