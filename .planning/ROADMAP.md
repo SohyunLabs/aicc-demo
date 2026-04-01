@@ -13,7 +13,7 @@
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Market Foundation** - 한국 AICC 시장 분석, 경쟁 구도, 차별화 포지셔닝 확립
-- [ ] **Phase 2: Product Vision & Core PRD** - 제품 비전, 페르소나, 보이스봇/Agent Assist MVP 기능 정의
+- [x] **Phase 2: Product Vision & Core PRD** - 제품 비전, 페르소나, 보이스봇/Agent Assist MVP 기능 정의
 - [ ] **Phase 3: PRD Completion & Pricing** - 자산 활용 계획, 우선순위 매트릭스, KPI, 가격 전략 완성
 - [ ] **Phase 4: UX Wireframes** - 관리 콘솔, Agent Assist, 셀프 온보딩 화면 설계
 - [ ] **Phase 5: Product Roadmap Document** - Phase별 배포 계획, 타임라인, 의존성, 리스크 정의
@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Executive Summary + 제품 비전/포지셔닝 + 6개 바이어 페르소나 (PRD-01, PRD-02)
-- [ ] 02-02-PLAN.md — 보이스봇 MVP 기능셋 + Agent Assist MVP 기능셋 + 기능 요약 매트릭스 + 최종 검토 (PRD-03, PRD-04)
+- [x] 02-01-PLAN.md — Executive Summary + 제품 비전/포지셔닝 + 6개 바이어 페르소나 (PRD-01, PRD-02)
+- [x] 02-02-PLAN.md — 보이스봇 MVP 기능셋 + Agent Assist MVP 기능셋 + 기능 요약 매트릭스 + 최종 검토 (PRD-03, PRD-04)
 
 ### Phase 3: PRD Completion & Pricing
 **Goal**: PRD의 실행 가능성(무엇을 새로 만들고, 무엇을 먼저 하고, 어떻게 측정하는지)과 수익 모델이 완성된다
@@ -105,7 +105,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Market Foundation | 2/2 | Complete | 2026-04-02 |
-| 2. Product Vision & Core PRD | 1/2 | In Progress | - |
+| 2. Product Vision & Core PRD | 2/2 | Complete | 2026-04-02 |
 | 3. PRD Completion & Pricing | 0/TBD | Not started | - |
 | 4. UX Wireframes | 0/TBD | Not started | - |
 | 5. Product Roadmap Document | 0/TBD | Not started | - |
