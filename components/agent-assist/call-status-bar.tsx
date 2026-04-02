@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export function CallStatusBar() {
-  const [elapsed, setElapsed] = useState(345); // 시작 시 5:45
+  // 와이어프레임 기준 03:42 시작
+  const [elapsed, setElapsed] = useState(222);
   const [isMuted, setIsMuted] = useState(false);
 
   // 통화 타이머
@@ -22,18 +23,32 @@ export function CallStatusBar() {
 
   return (
     <div className="flex items-center justify-between border-t bg-background px-6 py-2">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
+        {/* 통화 시간 */}
+        <div className="flex items-center gap-2">
+          <Phone className="h-4 w-4 text-muted-foreground" />
+          <span className="text-sm text-muted-foreground">통화 시간</span>
+          <span className="font-mono text-lg font-semibold tabular-nums">
+            {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
+          </span>
+        </div>
+
+        <span className="text-muted-foreground">|</span>
+
+        {/* 녹음 상태 */}
         <div className="flex items-center gap-2">
           <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500" />
           <Badge variant="outline" className="gap-1">
-            <Phone className="h-3 w-3" />
             녹음 중
           </Badge>
         </div>
-        <span className="font-mono text-lg font-semibold tabular-nums">
-          {minutes.toString().padStart(2, "0")}:{seconds.toString().padStart(2, "0")}
+
+        <span className="text-muted-foreground">|</span>
+
+        {/* 전환 정보 */}
+        <span className="text-sm text-muted-foreground">
+          보이스봇→상담원 전환 (14:29:00)
         </span>
-        <span className="text-sm text-muted-foreground">김지은 고객</span>
       </div>
 
       <div className="flex items-center gap-2">

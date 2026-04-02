@@ -31,7 +31,7 @@ export function Header() {
   // 현재 경로에 맞는 타이틀 결정
   const title = routeTitles[pathname] ?? Object.entries(routeTitles).find(
     ([route]) => pathname.startsWith(route)
-  )?.[1] ?? "AICC Console";
+  )?.[1] ?? "뤼튼 AICC";
 
   return (
     <header className="flex h-14 items-center justify-between border-b bg-background px-6">

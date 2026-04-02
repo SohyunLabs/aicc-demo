@@ -10,10 +10,12 @@ import {
   mockComplianceAlerts,
   mockCustomerInfo,
   mockSentimentData,
+  mockHandoffContext,
+  mockRealtimeKeywords,
 } from "@/lib/mock-aicc";
 import { AppSwitcher } from "@/components/layout/app-switcher";
 
-// Agent Assist — 풀스크린 3칼럼 상담원 보조 화면
+// Agent Assist -- 풀스크린 3칼럼 상담원 보조 화면
 export default function AgentAssistPage() {
   return (
     <div className="flex h-screen flex-col">
@@ -31,7 +33,8 @@ export default function AgentAssistPage() {
         <div className="w-[30%] border-r p-4 overflow-y-auto">
           <TranscriptPanel
             messages={mockTranscript}
-            contextSummary="고객이 클레임 CLM-2026-0328 진행 상황을 문의함. 보이스봇이 기본 조회 후 상담원에게 전환. 고객 감정: 약간 부정적 (대기시간 불만)."
+            handoffContext={mockHandoffContext}
+            realtimeKeywords={mockRealtimeKeywords}
           />
         </div>
 
@@ -52,7 +55,7 @@ export default function AgentAssistPage() {
         </div>
       </div>
 
-      {/* 하단: 통화 타이머 + 녹음 상태 바 */}
+      {/* 하단: 통화 상태 바 */}
       <CallStatusBar />
     </div>
   );

@@ -12,7 +12,7 @@ interface ScenarioCanvasProps {
 // 노드 타입별 스타일 — CSS 기반 정적 캔버스
 const nodeStyles: Record<string, { shape: string; bg: string; border: string }> = {
   start: {
-    shape: "rounded-full w-20 h-20",
+    shape: "rounded-full w-24 h-24",
     bg: "bg-emerald-100 dark:bg-emerald-900/50",
     border: "border-emerald-500",
   },
@@ -22,12 +22,12 @@ const nodeStyles: Record<string, { shape: string; bg: string; border: string }> 
     border: "border-blue-500",
   },
   response: {
-    shape: "rounded-lg w-32 h-20",
+    shape: "rounded-lg w-40 h-24",
     bg: "bg-amber-100 dark:bg-amber-900/50",
     border: "border-amber-500",
   },
   transfer: {
-    shape: "rounded-lg w-28 h-20",
+    shape: "rounded-lg w-36 h-24",
     bg: "bg-rose-100 dark:bg-rose-900/50",
     border: "border-rose-500",
   },
@@ -44,13 +44,10 @@ function EdgeLine({ edge, nodes }: { edge: ScenarioEdge; nodes: ScenarioNode[] }
   const to = nodes.find((n) => n.id === edge.to);
   if (!from || !to) return null;
 
-  // 노드 중심점 계산
   const x1 = from.x + 50;
   const y1 = from.y + 35;
   const x2 = to.x + 50;
   const y2 = to.y + 35;
-
-  // 곡선 제어점
   const midX = (x1 + x2) / 2;
 
   return (
@@ -77,9 +74,50 @@ function EdgeLine({ edge, nodes }: { edge: ScenarioEdge; nodes: ScenarioNode[] }
   );
 }
 
+// 노드 내부 텍스트 콘텐츠 표시 (와이어프레임 기준)
+function NodeContent({ node }: { node: ScenarioNode }) {
+  const text = node.properties.text;
+  const citation = node.properties.citation;
+
+  if (node.type === "start" && text) {
+    return (
+      <div className="text-center px-1">
+        <span className="text-xs font-medium block">{node.label}</span>
+        <span className="text-[10px] text-muted-foreground line-clamp-2 mt-0.5">{text}</span>
+      </div>
+    );
+  }
+
+  if (node.type === "response" && text) {
+    return (
+      <div className="text-left px-2 py-1 w-full">
+        <span className="text-xs font-medium block">{node.label}</span>
+        <span className="text-[10px] text-muted-foreground line-clamp-2 mt-0.5">{text}</span>
+        {citation && (
+          <span className="text-[9px] text-blue-500 block mt-0.5">{citation}</span>
+        )}
+      </div>
+    );
+  }
+
+  if (node.type === "intent") {
+    return (
+      <span className={`text-xs font-medium text-foreground -rotate-45`}>
+        {node.label}
+      </span>
+    );
+  }
+
+  return (
+    <span className="text-xs font-medium text-foreground">
+      {node.label}
+    </span>
+  );
+}
+
 export function ScenarioCanvas({ nodes, edges, onNodeSelect, selectedNodeId }: ScenarioCanvasProps) {
   return (
-    <div className="relative h-[500px] w-full overflow-auto rounded-lg border bg-background">
+    <div className="relative h-[550px] w-full overflow-auto rounded-lg border bg-background">
       {/* SVG 레이어 — 엣지 (연결선) */}
       <svg className="absolute inset-0 h-full w-full pointer-events-none">
         <defs>
@@ -115,9 +153,7 @@ export function ScenarioCanvas({ nodes, edges, onNodeSelect, selectedNodeId }: S
             }`}
             style={{ left: node.x, top: node.y }}
           >
-            <span className={`text-xs font-medium text-foreground ${node.type === "intent" ? "-rotate-45" : ""}`}>
-              {node.label}
-            </span>
+            <NodeContent node={node} />
           </button>
         );
       })}

@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, ShoppingCart, Wifi, Check } from "lucide-react";
+import { Shield, ShieldCheck, ShoppingCart, Check } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { mockIndustryTemplates } from "@/lib/mock-aicc";
 import type { LucideIcon } from "lucide-react";
 
+// 와이어프레임 산업별 아이콘 매핑
 const iconMap: Record<string, LucideIcon> = {
   Shield,
   ShoppingCart,
-  Wifi,
+  Wifi: ShieldCheck, // 이커머스 아이콘은 ShoppingCart를 사용하므로 Wifi 슬롯을 이커머스로 재활용
 };
 
 export function StepTemplate() {
@@ -19,9 +20,9 @@ export function StepTemplate() {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-1">산업 템플릿 선택</h2>
+      <h2 className="text-lg font-semibold mb-1">산업을 선택하세요</h2>
       <p className="text-sm text-muted-foreground mb-6">
-        산업에 맞는 사전 구성된 템플릿을 선택하세요.
+        산업별로 최적화된 시나리오와 컴플라이언스 규칙이 자동으로 설정됩니다.
       </p>
 
       <div className="grid gap-4 md:grid-cols-3">
@@ -53,6 +54,7 @@ export function StepTemplate() {
                 <Badge variant="secondary" className="mb-3">
                   시나리오 {tmpl.scenarios}개 포함
                 </Badge>
+                <p className="text-xs font-medium text-muted-foreground mb-2">포함 기능:</p>
                 <ul className="space-y-1">
                   {tmpl.features.map((f) => (
                     <li key={f} className="text-xs text-muted-foreground flex items-center gap-1">

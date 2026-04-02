@@ -59,7 +59,7 @@ export interface MonitoringKpi {
   escalationRate: number; // %
 }
 
-export type CallStatus = "진행중" | "대기" | "완료" | "전환";
+export type CallStatus = "진행중" | "대기" | "완료" | "전환" | "AI완결" | "보조해결" | "상담원전환";
 export type SentimentType = "긍정" | "중립" | "부정";
 
 export interface CallRecord {
@@ -71,6 +71,9 @@ export interface CallRecord {
   sentiment: SentimentType;
   duration: number; // 초
   startedAt: string;
+  // 와이어프레임 확장 필드
+  callType?: string; // 문의 유형 (적금 중도해지 등)
+  time?: string; // 시각 (10:23 등)
 }
 
 // === 지식 관리 ===
@@ -94,6 +97,11 @@ export interface KnowledgeTopic {
   description: string;
   keywords: string[];
   lastUpdated: string;
+  // 와이어프레임 확장 필드
+  questionCount?: number; // 질문 수
+  lastUsed?: string; // 최근 사용 일시
+  relatedDocuments?: string[]; // 관련 문서명
+  chunks?: { title: string; content: string }[]; // 관련 문서 청크
 }
 
 // === 설정 ===
@@ -161,6 +169,20 @@ export interface CustomerInfo {
   previousCalls: number;
   lastCallDate: string;
   issues: string[];
+  recentTransaction?: string; // 최근 거래
+  joinDate?: string; // 가입일
+  lastConsultation?: string; // 최근 상담 (날짜 + 내용)
+}
+
+// 보이스봇 핸드오프 컨텍스트 구조화 데이터
+export interface HandoffContext {
+  customerIntent: string; // 고객 의도
+  questionDetails: string; // 질문 내용
+  botResponse: string; // 보이스봇 응답
+  incompleteItems: string; // 미완료 항목
+  transferReason: string; // 전환 사유
+  customerEmotion: string; // 고객 감정 상태
+  botCallDuration: string; // 통화 시간(보이스봇)
 }
 
 export interface SentimentData {
@@ -188,8 +210,13 @@ export interface IndustryTemplate {
 export interface PricingTier {
   id: string;
   name: string;
-  price: number;
-  unit: string;
-  features: string[];
+  // 성과 기반 과금 구조
+  target: string; // 대상 (중소/SMB, 중견기업, 대기업)
+  agentCount: string; // 상담원 규모
+  voicebotPrice: string; // 보이스봇 건당 가격
+  agentAssistPrice: string; // Agent Assist 건당 가격
+  unresolvedPrice: string; // 미해결건 가격
+  includes: string[]; // 포함 사항
+  minimumCommitment: string; // 월 최소 또는 "별도 협의"
   recommended: boolean;
 }

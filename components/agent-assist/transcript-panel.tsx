@@ -1,11 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import type { TranscriptMessage } from "@/types/aicc";
+import type { TranscriptMessage, HandoffContext } from "@/types/aicc";
 
 interface TranscriptPanelProps {
   messages: TranscriptMessage[];
-  contextSummary: string;
+  handoffContext: HandoffContext;
+  realtimeKeywords: string[];
 }
 
 const speakerStyles: Record<string, { bg: string; align: string }> = {
@@ -14,16 +15,43 @@ const speakerStyles: Record<string, { bg: string; align: string }> = {
   "봇": { bg: "bg-muted", align: "mr-auto" },
 };
 
-export function TranscriptPanel({ messages, contextSummary }: TranscriptPanelProps) {
+// 핸드오프 컨텍스트 구조화 테이블 행
+const contextRows: { label: string; key: keyof HandoffContext }[] = [
+  { label: "고객 의도", key: "customerIntent" },
+  { label: "질문 내용", key: "questionDetails" },
+  { label: "보이스봇 응답", key: "botResponse" },
+  { label: "미완료 항목", key: "incompleteItems" },
+  { label: "전환 사유", key: "transferReason" },
+  { label: "고객 감정 상태", key: "customerEmotion" },
+  { label: "통화 시간(보이스봇)", key: "botCallDuration" },
+];
+
+export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: TranscriptPanelProps) {
   return (
     <div className="flex h-full flex-col gap-4">
-      {/* 핸드오프 컨텍스트 요약 */}
-      <Card>
+      {/* 핸드오프 컨텍스트 구조화 카드 */}
+      <Card className="bg-muted/50">
         <CardHeader className="py-3">
-          <CardTitle className="text-sm">핸드오프 컨텍스트</CardTitle>
+          <CardTitle className="text-sm">
+            <Badge variant="outline" className="mr-2">보이스봇에서 전환됨</Badge>
+            핸드오프 컨텍스트
+          </CardTitle>
         </CardHeader>
         <CardContent className="py-2">
-          <p className="text-sm text-muted-foreground">{contextSummary}</p>
+          <table className="w-full text-sm">
+            <tbody>
+              {contextRows.map((row) => (
+                <tr key={row.key} className="border-b border-border/50 last:border-b-0">
+                  <td className="py-1.5 pr-3 font-medium text-muted-foreground whitespace-nowrap align-top">
+                    {row.label}
+                  </td>
+                  <td className="py-1.5">
+                    {handoffContext[row.key]}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </CardContent>
       </Card>
 
@@ -33,7 +61,7 @@ export function TranscriptPanel({ messages, contextSummary }: TranscriptPanelPro
           <CardTitle className="text-sm">실시간 전사</CardTitle>
         </CardHeader>
         <CardContent className="flex-1 py-0 pb-3">
-          <ScrollArea className="h-[360px]">
+          <ScrollArea className="h-[280px]">
             <div className="space-y-3 pr-4">
               {messages.map((msg) => {
                 const style = speakerStyles[msg.speaker];
@@ -64,6 +92,23 @@ export function TranscriptPanel({ messages, contextSummary }: TranscriptPanelPro
               })}
             </div>
           </ScrollArea>
+        </CardContent>
+      </Card>
+
+      {/* 실시간 요약 */}
+      <Card>
+        <CardHeader className="py-3">
+          <CardTitle className="text-sm">실시간 요약</CardTitle>
+        </CardHeader>
+        <CardContent className="py-2">
+          <p className="text-xs text-muted-foreground mb-2">핵심 키워드:</p>
+          <div className="flex flex-wrap gap-1.5">
+            {realtimeKeywords.map((kw) => (
+              <Badge key={kw} variant="secondary" className="text-xs">
+                {kw}
+              </Badge>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </div>

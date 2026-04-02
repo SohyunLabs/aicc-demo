@@ -14,6 +14,7 @@ import {
   ChevronRight,
   Menu,
   X,
+  User,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -91,6 +92,27 @@ export function Sidebar() {
             );
           })}
         </nav>
+
+        {/* 사용자 정보 */}
+        <div className="border-t border-sidebar-border px-3 py-3">
+          {!collapsed ? (
+            <div className="flex items-center gap-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sidebar-accent">
+                <User className="h-4 w-4 text-sidebar-accent-foreground" />
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium text-sidebar-foreground">사용자명</p>
+                <p className="truncate text-xs text-sidebar-foreground/60">CS팀장</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex justify-center">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sidebar-accent">
+                <User className="h-4 w-4 text-sidebar-accent-foreground" />
+              </div>
+            </div>
+          )}
+        </div>
 
         <div className="hidden border-t border-sidebar-border p-2 md:block">
           <Button

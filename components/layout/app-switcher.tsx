@@ -15,7 +15,7 @@ interface AppSwitcherProps {
 }
 
 const apps = [
-  { id: "console" as const, icon: Monitor, label: "AICC Console", desc: "관리 콘솔", href: "/dashboard" },
+  { id: "console" as const, icon: Monitor, label: "뤼튼 AICC", desc: "관리 콘솔", href: "/dashboard" },
   { id: "agent-assist" as const, icon: Headset, label: "Agent Assist", desc: "상담원 실시간 보조", href: "/agent-assist" },
   { id: "onboarding" as const, icon: Rocket, label: "온보딩", desc: "셀프 서비스 시작하기", href: "/onboarding" },
 ];
