@@ -30,9 +30,9 @@
 
 ### PRC (가격 전략)
 
-- [ ] **PRC-01**: 구축형 가격 구조 -- 기존 프로젝트 기반 가격 체계 정리
-- [ ] **PRC-02**: SaaS형 가격 구조 -- 성과 기반 과금(Outcome-Based Pricing) 설계, "해결" 정의 기준 명시
-- [ ] **PRC-03**: 경쟁력 있는 가격 포인트 근거 -- 경쟁사(KT, Genesys, Sierra AI 등) 가격 대비 포지셔닝
+- [x] **PRC-01**: 구축형 가격 구조 -- 기존 프로젝트 기반 가격 체계 정리
+- [x] **PRC-02**: SaaS형 가격 구조 -- 성과 기반 과금(Outcome-Based Pricing) 설계, "해결" 정의 기준 명시
+- [x] **PRC-03**: 경쟁력 있는 가격 포인트 근거 -- 경쟁사(KT, Genesys, Sierra AI 등) 가격 대비 포지셔닝
 
 ### MKT (시장 분석)
 
@@ -75,9 +75,9 @@
 | PRD-05 | Phase 3 | Pending |
 | PRD-06 | Phase 3 | Pending |
 | PRD-07 | Phase 3 | Pending |
-| PRC-01 | Phase 3 | Pending |
-| PRC-02 | Phase 3 | Pending |
-| PRC-03 | Phase 3 | Pending |
+| PRC-01 | Phase 3 | Complete |
+| PRC-02 | Phase 3 | Complete |
+| PRC-03 | Phase 3 | Complete |
 | UX-01 | Phase 4 | Pending |
 | UX-02 | Phase 4 | Pending |
 | UX-03 | Phase 4 | Pending |
