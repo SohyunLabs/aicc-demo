@@ -26,7 +26,7 @@
 ### RM (로드맵)
 
 - [x] **RM-01**: Phase별 기능 배포 계획 -- 개발 리소스 가정 포함, 성과 과금+컴플라이언스 엔진 Phase 1 포함
-- [ ] **RM-02**: 타임라인 및 의존성/리스크 정의 -- 기술 의존성 그래프, 리스크 매트릭스, 마일스톤
+- [x] **RM-02**: 타임라인 및 의존성/리스크 정의 -- 기술 의존성 그래프, 리스크 매트릭스, 마일스톤
 
 ### PRC (가격 전략)
 
@@ -82,7 +82,7 @@
 | UX-02 | Phase 4 | Complete |
 | UX-03 | Phase 4 | Complete |
 | RM-01 | Phase 5 | Complete |
-| RM-02 | Phase 5 | Pending |
+| RM-02 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 18 total
