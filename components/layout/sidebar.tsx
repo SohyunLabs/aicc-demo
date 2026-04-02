@@ -15,9 +15,20 @@ import {
   ChevronRight,
   Menu,
   X,
+  ChevronsUpDown,
+  Monitor,
+  Headset,
+  Rocket,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 
 // AICC 관리 콘솔 네비게이션 메뉴
 const navItems = [
@@ -62,12 +73,51 @@ export function Sidebar() {
           mobileOpen && "!fixed inset-y-0 left-0 z-50 !flex w-64"
         )}
       >
-        {/* 상단: 로고 + 모바일 닫기 */}
+        {/* 상단: 앱 스위처 + 모바일 닫기 */}
         <div className="flex h-14 items-center justify-between border-b border-sidebar-border px-4">
           {!collapsed && (
-            <span className="text-lg font-semibold text-sidebar-foreground">
-              AICC Console
-            </span>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-2 rounded-md px-2 py-1 hover:bg-sidebar-accent transition-colors">
+                  <Monitor className="h-4 w-4 text-sidebar-foreground" />
+                  <span className="text-lg font-semibold text-sidebar-foreground">
+                    AICC Console
+                  </span>
+                  <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link href="/dashboard" className="flex items-center gap-2 cursor-pointer">
+                    <Monitor className="h-4 w-4" />
+                    <div>
+                      <p className="text-sm font-medium">AICC Console</p>
+                      <p className="text-xs text-muted-foreground">관리 콘솔</p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/agent-assist" className="flex items-center gap-2 cursor-pointer">
+                    <Headset className="h-4 w-4" />
+                    <div>
+                      <p className="text-sm font-medium">Agent Assist</p>
+                      <p className="text-xs text-muted-foreground">상담원 실시간 보조</p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/onboarding" className="flex items-center gap-2 cursor-pointer">
+                    <Rocket className="h-4 w-4" />
+                    <div>
+                      <p className="text-sm font-medium">온보딩</p>
+                      <p className="text-xs text-muted-foreground">셀프 서비스 시작하기</p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           )}
           <Button
             variant="ghost"
