@@ -1,37 +1,18 @@
 // 라우트 보호 프록시 (Next.js 16에서 middleware → proxy로 변경)
-// 미인증 사용자를 로그인 페이지로 리다이렉트합니다
-// 온보딩은 인증 없이 접근 가능 (고객 대면 화면)
-import { auth } from "@/auth";
+// 데모 프로토타입: 인증 비활성화 (모든 경로 접근 가능)
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default auth((req) => {
+export default function proxy(req: NextRequest) {
   const { nextUrl } = req;
-  const isLoggedIn = !!req.auth;
 
-  // 보호된 경로: 관리 콘솔 + Agent Assist
-  const isProtectedRoute =
-    nextUrl.pathname.startsWith("/dashboard") ||
-    nextUrl.pathname.startsWith("/scenarios") ||
-    nextUrl.pathname.startsWith("/monitoring") ||
-    nextUrl.pathname.startsWith("/knowledge") ||
-    nextUrl.pathname.startsWith("/settings") ||
-    nextUrl.pathname.startsWith("/agent-assist");
-
-  // 인증 경로: /login 페이지
-  const isAuthRoute = nextUrl.pathname.startsWith("/login");
-
-  // 미인증 사용자 → 로그인 페이지로 리다이렉트
-  if (isProtectedRoute && !isLoggedIn) {
-    return NextResponse.redirect(new URL("/login", nextUrl));
-  }
-
-  // 이미 로그인된 사용자 → 대시보드로 리다이렉트
-  if (isAuthRoute && isLoggedIn) {
+  // 루트 접근 시 대시보드로 리다이렉트
+  if (nextUrl.pathname === "/") {
     return NextResponse.redirect(new URL("/dashboard", nextUrl));
   }
 
   return NextResponse.next();
-});
+}
 
 // 정적 파일과 API를 제외한 모든 경로에 프록시 적용
 export const config = {
