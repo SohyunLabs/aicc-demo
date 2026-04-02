@@ -76,11 +76,11 @@ Plans:
   2. Agent Assist 화면이 실시간 통화 요약, 추천 응답, 고객 정보 패널, 감정 분석, 컴플라이언스 경고를 하나의 화면에 배치하고 있다
   3. 셀프 온보딩 화면이 프로필 등록부터 테스트 콜, 결제까지의 전체 플로우를 단계별로 보여준다
   4. 와이어프레임만 보고도 각 화면의 핵심 사용자 태스크와 정보 계층을 파악할 수 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md — 보이스봇 관리 콘솔 와이어프레임: GNB 5영역 + 대시보드/시나리오 빌더/모니터링/지식 관리/설정 (UX-01)
+- [ ] 04-02-PLAN.md — Agent Assist 3칸럼 화면 + 셀프 온보딩 6스텝 위자드 + 부록 (UX-02, UX-03)
 
 ### Phase 5: Product Roadmap Document
 **Goal**: 기획서의 마지막 퍼즐로, 앞선 모든 문서를 종합하여 실행 가능한 제품 출시 계획이 완성된다
@@ -107,5 +107,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Market Foundation | 2/2 | Complete | 2026-04-02 |
 | 2. Product Vision & Core PRD | 2/2 | Complete | 2026-04-02 |
 | 3. PRD Completion & Pricing | 0/2 | Planned | - |
-| 4. UX Wireframes | 0/TBD | Not started | - |
+| 4. UX Wireframes | 0/2 | Planned | - |
 | 5. Product Roadmap Document | 0/TBD | Not started | - |
