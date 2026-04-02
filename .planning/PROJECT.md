@@ -37,8 +37,8 @@
 - [x] UX-03: 고객사 셀프 온보딩 화면 (신규) — Validated in Phase 04
 
 **[로드맵]**
-- [ ] RM-01: Phase별 기능 배포 계획 (개발 리소스 가정 포함)
-- [ ] RM-02: 타임라인 및 의존성·리스크 정의
+- [x] RM-01: Phase별 기능 배포 계획 (개발 리소스 가정 포함) — Validated in Phase 05
+- [x] RM-02: 타임라인 및 의존성·리스크 정의 — Validated in Phase 05
 
 **[가격 전략]**
 - [x] PRC-01: 구축형 가격 구조 — Validated in Phase 03
@@ -82,4 +82,4 @@
 | 셀프 온보딩 화면 신규 개발 | 구축형의 긴 PoC 기간을 단축, SaaS 확장성 핵심 | — Pending |
 
 ---
-*Last updated: 2026-04-02 after Phase 04 (ux-wireframes) completion — 3개 핵심 화면(관리 콘솔, Agent Assist, 셀프 온보딩) 고밀도 ASCII 와이어프레임 862줄 완성, 기존 AdminPanel 대비 개선점 명시*
+*Last updated: 2026-04-02 after Phase 05 (product-roadmap-document) completion — 전 Phase 요구사항 충족 완료. 5문서 세트 완결: market-analysis.md + prd-core.md + pricing-strategy.md + ux-wireframes.md + product-roadmap.md*
