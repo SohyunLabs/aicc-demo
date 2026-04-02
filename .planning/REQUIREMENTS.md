@@ -19,7 +19,7 @@
 
 ### UX (화면 설계)
 
-- [ ] **UX-01**: 보이스봇 관리 콘솔 와이어프레임 -- 기존 AdminPanel 제품 수준 개선, 시나리오 빌더/모니터링/지식 관리
+- [x] **UX-01**: 보이스봇 관리 콘솔 와이어프레임 -- 기존 AdminPanel 제품 수준 개선, 시나리오 빌더/모니터링/지식 관리
 - [ ] **UX-02**: Agent Assist 실시간 보조 화면 -- 실시간 통화 요약/추천 응답/고객 정보 패널/감정 분석/컴플라이언스 경고
 - [ ] **UX-03**: 고객사 셀프 온보딩 화면 -- 프로필 등록 > 산업 템플릿 > 문서 업로드 > 시나리오 빌더 > 테스트 콜 > 결제 플로우
 
@@ -78,7 +78,7 @@
 | PRC-01 | Phase 3 | Complete |
 | PRC-02 | Phase 3 | Complete |
 | PRC-03 | Phase 3 | Complete |
-| UX-01 | Phase 4 | Pending |
+| UX-01 | Phase 4 | Complete |
 | UX-02 | Phase 4 | Pending |
 | UX-03 | Phase 4 | Pending |
 | RM-01 | Phase 5 | Pending |
