@@ -1,32 +1,24 @@
-// 메인 대시보드 페이지 (Server Component)
-// 서버에서 데이터를 가져와 각 컴포넌트에 전달합니다
-import { getDashboardData } from "@/lib/data";
-import { KpiCards } from "@/components/dashboard/kpi-cards";
-import { RevenueChart } from "@/components/dashboard/revenue-chart";
-import { CategoryChart } from "@/components/dashboard/category-chart";
-import { RecentOrdersTable } from "@/components/dashboard/recent-orders-table";
+import { AiccKpiCards } from "@/components/dashboard/aicc-kpi-cards";
+import { ActivityTimeline } from "@/components/dashboard/activity-timeline";
+import { SystemStatusCard } from "@/components/dashboard/system-status";
+import { mockAiccKpi, mockActivities, mockSystemStatus } from "@/lib/mock-aicc";
 
-export default async function DashboardPage() {
-  // 서버에서 데이터 페칭 (Google Sheets 또는 mock 데이터)
-  const data = await getDashboardData();
-
+// AICC 대시보드 — KPI 요약 + 최근 활동 + 시스템 상태
+export default function DashboardPage() {
   return (
     <div className="space-y-6">
-      {/* KPI 요약 카드 4개 */}
-      <KpiCards data={data.kpi} />
+      {/* KPI 카드 4개 */}
+      <AiccKpiCards kpi={mockAiccKpi} />
 
-      {/* 차트 영역: 라인 차트 (4/7) + 파이 차트 (3/7) */}
+      {/* 최근 활동 타임라인 + 시스템 상태 */}
       <div className="grid gap-6 lg:grid-cols-7">
         <div className="lg:col-span-4">
-          <RevenueChart data={data.monthlyRevenue} />
+          <ActivityTimeline activities={mockActivities} />
         </div>
         <div className="lg:col-span-3">
-          <CategoryChart data={data.categoryDistribution} />
+          <SystemStatusCard status={mockSystemStatus} />
         </div>
       </div>
-
-      {/* 최근 주문 테이블 */}
-      <RecentOrdersTable data={data.recentOrders} />
     </div>
   );
 }

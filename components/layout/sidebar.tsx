@@ -1,11 +1,16 @@
 "use client";
 
-// 반응형 사이드바 네비게이션
+// AICC 관리 콘솔 사이드바 네비게이션
 // 데스크톱: 접기/펼치기 가능, 모바일: 오버레이로 표시
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
+  GitBranch,
+  Activity,
+  BookOpen,
+  Settings,
   ChevronLeft,
   ChevronRight,
   Menu,
@@ -14,21 +19,18 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-// 네비게이션 메뉴 항목
+// AICC 관리 콘솔 네비게이션 메뉴
 const navItems = [
-  {
-    icon: LayoutDashboard,
-    label: "대시보드",
-    href: "/dashboard",
-  },
-  // 향후 메뉴 추가 가능
-  // { icon: Settings, label: "설정", href: "/settings" },
+  { icon: LayoutDashboard, label: "대시보드", href: "/dashboard" },
+  { icon: GitBranch, label: "시나리오 빌더", href: "/scenarios" },
+  { icon: Activity, label: "모니터링", href: "/monitoring" },
+  { icon: BookOpen, label: "지식 관리", href: "/knowledge" },
+  { icon: Settings, label: "설정", href: "/settings" },
 ];
 
 export function Sidebar() {
-  // 데스크톱 접기/펼치기 상태
+  const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
-  // 모바일 메뉴 열림/닫힘 상태
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -54,12 +56,9 @@ export function Sidebar() {
       {/* 사이드바 본체 */}
       <aside
         className={cn(
-          // 기본 스타일
           "flex h-screen flex-col border-r border-sidebar-border bg-sidebar transition-all duration-300",
-          // 데스크톱: 접기/펼치기
           "hidden md:flex",
           collapsed ? "w-16" : "w-64",
-          // 모바일: 오버레이
           mobileOpen && "!fixed inset-y-0 left-0 z-50 !flex w-64"
         )}
       >
@@ -67,10 +66,9 @@ export function Sidebar() {
         <div className="flex h-14 items-center justify-between border-b border-sidebar-border px-4">
           {!collapsed && (
             <span className="text-lg font-semibold text-sidebar-foreground">
-              Dashboard
+              AICC Console
             </span>
           )}
-          {/* 모바일 닫기 버튼 */}
           <Button
             variant="ghost"
             size="icon"
@@ -83,20 +81,25 @@ export function Sidebar() {
 
         {/* 네비게이션 메뉴 */}
         <nav className="flex-1 space-y-1 p-2">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
-                "bg-sidebar-accent text-sidebar-accent-foreground"
-              )}
-            >
-              <item.icon className="h-5 w-5 shrink-0" />
-              {!collapsed && <span>{item.label}</span>}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={cn(
+                  "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
+                  isActive
+                    ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                    : "text-sidebar-foreground/70 hover:bg-sidebar-accent/50 hover:text-sidebar-accent-foreground"
+                )}
+              >
+                <item.icon className="h-5 w-5 shrink-0" />
+                {!collapsed && <span>{item.label}</span>}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* 하단: 접기/펼치기 버튼 (데스크톱만) */}
