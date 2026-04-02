@@ -32,9 +32,9 @@
 - [x] PRD-07: 성공 지표 (KPI) 정의 — Validated in Phase 03
 
 **[화면 설계]**
-- [ ] UX-01: 보이스봇 관리 콘솔 — 기존 AdminPanel 제품 수준 개선 와이어프레임
-- [ ] UX-02: Agent Assist 실시간 보조 화면 (실시간 통화 요약 / 추천 응답 / 고객 정보 패널 / 감정 분석)
-- [ ] UX-03: 고객사 셀프 온보딩 화면 (신규)
+- [x] UX-01: 보이스봇 관리 콘솔 — 기존 AdminPanel 제품 수준 개선 와이어프레임 — Validated in Phase 04
+- [x] UX-02: Agent Assist 실시간 보조 화면 (실시간 통화 요약 / 추천 응답 / 고객 정보 패널 / 감정 분석) — Validated in Phase 04
+- [x] UX-03: 고객사 셀프 온보딩 화면 (신규) — Validated in Phase 04
 
 **[로드맵]**
 - [ ] RM-01: Phase별 기능 배포 계획 (개발 리소스 가정 포함)
@@ -82,4 +82,4 @@
 | 셀프 온보딩 화면 신규 개발 | 구축형의 긴 PoC 기간을 단축, SaaS 확장성 핵심 | — Pending |
 
 ---
-*Last updated: 2026-04-02 after Phase 03 (prd-completion-pricing) completion — PRD 완결(자산 활용/우선순위/KPI) + 가격 전략(구축형/SaaS 3티어/경쟁사 17개사 포지셔닝) 문서 완성*
+*Last updated: 2026-04-02 after Phase 04 (ux-wireframes) completion — 3개 핵심 화면(관리 콘솔, Agent Assist, 셀프 온보딩) 고밀도 ASCII 와이어프레임 862줄 완성, 기존 AdminPanel 대비 개선점 명시*
