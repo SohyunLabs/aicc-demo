@@ -11,6 +11,7 @@ import {
   mockCustomerInfo,
   mockSentimentData,
 } from "@/lib/mock-aicc";
+import { AppSwitcher } from "@/components/layout/app-switcher";
 
 // Agent Assist — 풀스크린 3칼럼 상담원 보조 화면
 export default function AgentAssistPage() {
@@ -18,7 +19,7 @@ export default function AgentAssistPage() {
     <div className="flex h-screen flex-col">
       {/* 상단 헤더 */}
       <div className="flex items-center justify-between border-b bg-background px-6 py-3">
-        <h1 className="text-lg font-semibold">Agent Assist</h1>
+        <AppSwitcher current="agent-assist" />
         <span className="text-sm text-muted-foreground">
           상담 ID: CALL-2026-0402-001
         </span>

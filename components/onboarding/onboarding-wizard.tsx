@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { AppSwitcher } from "@/components/layout/app-switcher";
 import { StepProfile } from "./steps/step-profile";
 import { StepTemplate } from "./steps/step-template";
 import { StepUpload } from "./steps/step-upload";
@@ -28,6 +29,11 @@ export function OnboardingWizard() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
+      {/* 앱 스위처 */}
+      <div className="mb-6">
+        <AppSwitcher current="onboarding" />
+      </div>
+
       {/* 로고/타이틀 */}
       <div className="text-center mb-8">
         <h1 className="text-2xl font-bold">AICC 시작하기</h1>
