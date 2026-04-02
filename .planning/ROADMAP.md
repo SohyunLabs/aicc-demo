@@ -61,11 +61,11 @@ Plans:
   3. 해결률, AHT 단축, CSAT, 온보딩 소요시간, 컴플라이언스 위반률 등 KPI가 측정 방법과 목표치와 함께 정의되어 있다
   4. 구축형 가격 구조와 SaaS 성과 기반 과금 구조가 나란히 비교되어 있으며, "해결" 정의 기준이 명시되어 있다
   5. 경쟁사(KT, Genesys, Sierra AI 등) 가격 대비 뤼튼의 가격 포지셔닝 근거가 데이터로 뒷받침되어 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — PRD 확장: 자산 활용 계획(PRD-05) + 우선순위 매트릭스(PRD-06) + KPI 정의(PRD-07)
+- [ ] 03-02-PLAN.md — 가격 전략: 구축형 가격(PRC-01) + SaaS 성과 기반 과금(PRC-02) + 경쟁사 포지셔닝(PRC-03)
 
 ### Phase 4: UX Wireframes
 **Goal**: 세 가지 핵심 화면(관리 콘솔, Agent Assist, 셀프 온보딩)의 정보 구조와 사용자 플로우가 시각적으로 전달된다
@@ -106,6 +106,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Market Foundation | 2/2 | Complete | 2026-04-02 |
 | 2. Product Vision & Core PRD | 2/2 | Complete | 2026-04-02 |
-| 3. PRD Completion & Pricing | 0/TBD | Not started | - |
+| 3. PRD Completion & Pricing | 0/2 | Planned | - |
 | 4. UX Wireframes | 0/TBD | Not started | - |
 | 5. Product Roadmap Document | 0/TBD | Not started | - |
