@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-04-02T05:21:45.262Z"
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-04-02T05:29:11.422Z"
 progress:
   total_phases: 5
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-31)
 
 **Core value:** "틀리면 안 되는 상담에서, 검증된 AI 응답을 제공한다" -- Hybrid RAG 기반 출처 추적 가능하고 신뢰 가능한 답변
-**Current focus:** Phase 04 — ux-wireframes
+**Current focus:** Phase 04 — ux-wireframes (COMPLETE) -- Phase 05 ready
 
 ## Current Position
 
-Phase: 04 (ux-wireframes) — EXECUTING
-Plan: 2 of 2
+Phase: 04 (ux-wireframes) — COMPLETE
+Plan: 2 of 2 (all complete)
 
 ## Performance Metrics
 
@@ -50,6 +50,7 @@ Plan: 2 of 2
 | Phase 03 P02 | 4min | 2 tasks | 1 files |
 | Phase 03 P01 | 5min | 2 tasks | 1 files |
 | Phase 04 P01 | 4min | 2 tasks | 1 files |
+| Phase 04 P02 | 4min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -83,6 +84,10 @@ Recent decisions affecting current work:
 - [Phase 03]: 코어 밸류 정량 KPI: 할루시네이션 발생률 <0.5%(1년) + 컴플라이언스 사전 차단 95%+(1년)
 - [Phase 04]: 시나리오 빌더를 노드-엣지 캔버스 비주얼 플로우로 설계 -- 기존 AdminPanel 텍스트 목록 대비 핵심 개선
 - [Phase 04]: 지식 관리에서 Hybrid RAG 내부 구조(Elasticsearch/Neo4j) 비노출, 문서/토픽 관점 관리 인터페이스로 추상화
+- [Phase 04]: Agent Assist 3칸럼 배치: 좌(전사/요약) 중(추천 응답/경고) 우(고객 정보/감정) -- 상담원 시선 흐름 기반
+- [Phase 04]: 컴플라이언스 경고 인라인 방식(전사 하이라이트 + 중앙 배너) -- 모달 팝업으로 상담 흐름 끊지 않음
+- [Phase 04]: 셀프 온보딩 깊이 배분: 핵심 가치 체험 4단계(산업 템플릿/시나리오/테스트 콜/결제) 상세 + 행정 2단계(프로필/문서) 간략
+- [Phase 04]: 결제 3티어 가격 pricing-strategy.md 2.2절 정확 일치 (₩2,500/₩2,000/커스텀, 미해결건 ₩0)
 
 ### Pending Todos
 
@@ -94,6 +99,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-02T05:21:45.260Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-04-02T05:29:11.420Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
