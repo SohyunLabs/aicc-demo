@@ -91,10 +91,11 @@ Plans:
   2. 기술 의존성 그래프가 기능 간 선후 관계를 명확히 보여준다
   3. 리스크 매트릭스가 발생 확률과 영향도로 분류되어 있고, 각 리스크에 대한 완화 전략이 있다
   4. 타임라인과 마일스톤이 시각적으로 표현되어 있어 전체 출시 계획을 한눈에 파악할 수 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — Executive Summary + 팀 구성/리소스 가정 + Phase별 기능 배포 계획 (RM-01)
+- [ ] 05-02-PLAN.md — 기술 의존성 그래프 + 타임라인/마일스톤 + 리스크 매트릭스 + 출처 (RM-02)
 
 ## Progress
 
@@ -108,4 +109,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Product Vision & Core PRD | 2/2 | Complete | 2026-04-02 |
 | 3. PRD Completion & Pricing | 0/2 | Planned | - |
 | 4. UX Wireframes | 0/2 | Planned | - |
-| 5. Product Roadmap Document | 0/TBD | Not started | - |
+| 5. Product Roadmap Document | 0/2 | Not started | - |
