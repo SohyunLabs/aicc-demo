@@ -13,9 +13,9 @@
 - [x] **PRD-02**: 타겟 고객 세그먼트 및 페르소나 정의 -- 금융/보험/이커머스 3개 산업별 바이어 페르소나
 - [x] **PRD-03**: 보이스봇 MVP 기능셋 정의 -- 산업 공통 + 산업별 특화 기능, 출처 추적 응답/할루시네이션 가드 Day 1 포함
 - [x] **PRD-04**: Agent Assist MVP 기능셋 정의 -- 실시간 전사/요약/추천 응답/컴플라이언스 경고 등
-- [ ] **PRD-05**: 기존 자산 활용 계획 vs 신규 개발 범위 -- Build/Buy/Enhance 분류, 컴플라이언스 엔진은 기존 RAG 재포지셔닝
-- [ ] **PRD-06**: 기능 우선순위 매트릭스 -- MVP / Phase 2 / Future 분류, 리서치 기반 근거
-- [ ] **PRD-07**: 성공 지표(KPI) 정의 -- 해결률, AHT 단축, CSAT, 온보딩 소요시간, 컴플라이언스 위반률
+- [x] **PRD-05**: 기존 자산 활용 계획 vs 신규 개발 범위 -- Build/Buy/Enhance 분류, 컴플라이언스 엔진은 기존 RAG 재포지셔닝
+- [x] **PRD-06**: 기능 우선순위 매트릭스 -- MVP / Phase 2 / Future 분류, 리서치 기반 근거
+- [x] **PRD-07**: 성공 지표(KPI) 정의 -- 해결률, AHT 단축, CSAT, 온보딩 소요시간, 컴플라이언스 위반률
 
 ### UX (화면 설계)
 
@@ -72,9 +72,9 @@
 | PRD-02 | Phase 2 | Complete |
 | PRD-03 | Phase 2 | Complete |
 | PRD-04 | Phase 2 | Complete |
-| PRD-05 | Phase 3 | Pending |
-| PRD-06 | Phase 3 | Pending |
-| PRD-07 | Phase 3 | Pending |
+| PRD-05 | Phase 3 | Complete |
+| PRD-06 | Phase 3 | Complete |
+| PRD-07 | Phase 3 | Complete |
 | PRC-01 | Phase 3 | Complete |
 | PRC-02 | Phase 3 | Complete |
 | PRC-03 | Phase 3 | Complete |
