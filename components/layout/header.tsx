@@ -1,18 +1,8 @@
 "use client";
 
-// 상단 헤더: 라우트 기반 동적 타이틀 + 다크모드 토글 + 유저 아바타/로그아웃
-import { useSession, signOut } from "next-auth/react";
+// 상단 헤더: 라우트 기반 동적 타이틀 + 다크모드 토글 + 유저 아바타
 import { usePathname } from "next/navigation";
-import { LogOut } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "./theme-toggle";
 
 // 라우트별 페이지 타이틀 매핑
@@ -25,7 +15,6 @@ const routeTitles: Record<string, string> = {
 };
 
 export function Header() {
-  const { data: session } = useSession();
   const pathname = usePathname();
 
   // 현재 경로에 맞는 타이틀 결정
@@ -39,36 +28,9 @@ export function Header() {
 
       <div className="flex items-center gap-2">
         <ThemeToggle />
-
-        <DropdownMenu>
-          <DropdownMenuTrigger className="outline-none">
-            <Avatar className="h-8 w-8 cursor-pointer">
-              <AvatarImage
-                src={session?.user?.image ?? ""}
-                alt={session?.user?.name ?? "사용자"}
-              />
-              <AvatarFallback>
-                {session?.user?.name?.charAt(0) ?? "U"}
-              </AvatarFallback>
-            </Avatar>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>
-              <p className="text-sm font-medium">{session?.user?.name}</p>
-              <p className="text-xs text-muted-foreground">
-                {session?.user?.email}
-              </p>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem
-              onClick={() => signOut({ callbackUrl: "/login" })}
-              className="cursor-pointer"
-            >
-              <LogOut className="mr-2 h-4 w-4" />
-              로그아웃
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Avatar className="h-8 w-8">
+          <AvatarFallback>U</AvatarFallback>
+        </Avatar>
       </div>
     </header>
   );
