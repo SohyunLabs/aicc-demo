@@ -27,9 +27,9 @@
 - [x] PRD-02: 타겟 고객 세그먼트 및 페르소나 정의 (금융·보험·이커머스 3개 산업별) — Validated in Phase 02
 - [x] PRD-03: 핵심 기능 정의 — 보이스봇 MVP 기능셋 — Validated in Phase 02
 - [x] PRD-04: 핵심 기능 정의 — Agent Assist MVP 기능셋 — Validated in Phase 02
-- [ ] PRD-05: 기존 자산 활용 계획 vs 신규 개발 범위 명세
-- [ ] PRD-06: 기능 우선순위 (MVP / Phase 2 / Future) 매트릭스
-- [ ] PRD-07: 성공 지표 (KPI) 정의
+- [x] PRD-05: 기존 자산 활용 계획 vs 신규 개발 범위 명세 — Validated in Phase 03
+- [x] PRD-06: 기능 우선순위 (MVP / Phase 2 / Future) 매트릭스 — Validated in Phase 03
+- [x] PRD-07: 성공 지표 (KPI) 정의 — Validated in Phase 03
 
 **[화면 설계]**
 - [ ] UX-01: 보이스봇 관리 콘솔 — 기존 AdminPanel 제품 수준 개선 와이어프레임
@@ -41,9 +41,9 @@
 - [ ] RM-02: 타임라인 및 의존성·리스크 정의
 
 **[가격 전략]**
-- [ ] PRC-01: 구축형 가격 구조
-- [ ] PRC-02: SaaS형 가격 구조 (성과 기반 과금 포함)
-- [ ] PRC-03: 경쟁력 있는 가격 포인트 근거
+- [x] PRC-01: 구축형 가격 구조 — Validated in Phase 03
+- [x] PRC-02: SaaS형 가격 구조 (성과 기반 과금 포함) — Validated in Phase 03
+- [x] PRC-03: 경쟁력 있는 가격 포인트 근거 — Validated in Phase 03
 
 **[시장 분석 — 차별화 근거]** — Validated in Phase 01: market-foundation
 - [x] MKT-01: 경쟁사 분석 (Genesys, 카카오엔터프라이즈, 솔트룩스 등) 대비 포지셔닝
@@ -82,4 +82,4 @@
 | 셀프 온보딩 화면 신규 개발 | 구축형의 긴 PoC 기간을 단축, SaaS 확장성 핵심 | — Pending |
 
 ---
-*Last updated: 2026-04-02 after Phase 02 (product-vision-core-prd) completion — 10페이지 이내 통합 PRD 문서 완성 (비전/포지셔닝, 6명 페르소나, 보이스봇 MVP, Agent Assist MVP)*
+*Last updated: 2026-04-02 after Phase 03 (prd-completion-pricing) completion — PRD 완결(자산 활용/우선순위/KPI) + 가격 전략(구축형/SaaS 3티어/경쟁사 17개사 포지셔닝) 문서 완성*
