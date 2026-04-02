@@ -47,7 +47,7 @@ Declared values (must be multiples of 4):
 
 Exceptions:
 - 터치 타겟(모바일 고려 시): 44px 최소 높이 -- 단, Phase 4는 데스크톱 웹 기반 관리 콘솔 우선이므로 와이어프레임에서는 적용하지 않음
-- Agent Assist 컴플라이언스 경고 배너: 최소 높이 40px -- 상담원 즉시 인지를 위한 예외
+- Agent Assist 컴플라이언스 경고 배너: 최소 높이 48px (2xl 토큰) -- 상담원 즉시 인지를 위한 예외
 
 ---
 
@@ -211,7 +211,8 @@ Accent reserved for:
 | 월 최소    | 월 최소           | 별도 협의    |
 | ₩50만      | ₩200만            |              |
 |            |                   |              |
-| [시작하기]  | [*시작하기*]      | [문의하기]   |
+| [Starter   | [*Professional    | [Enterprise  |
+|  플랜 시작] |  플랜 시작*]      |  도입 문의]  |
 +------------+-------------------+--------------+
 ```
 
@@ -274,6 +275,9 @@ Accent reserved for:
 | Primary CTA -- 일반 | "다음 단계" |
 | Primary CTA -- 테스트 콜 | "테스트 콜 시작" |
 | Primary CTA -- 결제 | "구독 시작" |
+| CTA -- Starter 티어 | "Starter 플랜 시작" |
+| CTA -- Professional 티어 | "Professional 플랜 시작" |
+| CTA -- Enterprise 티어 | "Enterprise 도입 문의" |
 | 산업 템플릿 선택 heading | "산업을 선택하세요" |
 | 산업 템플릿 선택 body | "산업별로 최적화된 시나리오와 컴플라이언스 규칙이 자동으로 설정됩니다." |
 | 테스트 콜 heading | "AI 상담 품질을 직접 확인하세요" |
