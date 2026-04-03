@@ -36,7 +36,7 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
             핸드오프 컨텍스트
           </CardTitle>
         </CardHeader>
-        <CardContent className="py-2">
+        <CardContent className="py-2 space-y-3">
           <table className="w-full text-sm">
             <tbody>
               {contextRows.map((row) => (
@@ -51,6 +51,17 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
               ))}
             </tbody>
           </table>
+          {/* 핵심 키워드 */}
+          <div className="border-t border-border/50 pt-3">
+            <p className="text-xs text-muted-foreground mb-2">핵심 키워드:</p>
+            <div className="flex flex-wrap gap-1.5">
+              {realtimeKeywords.map((kw) => (
+                <Badge key={kw} variant="secondary" className="text-xs">
+                  {kw}
+                </Badge>
+              ))}
+            </div>
+          </div>
         </CardContent>
       </Card>
 
@@ -90,23 +101,6 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
                 );
               })}
             </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* 실시간 요약 */}
-      <Card>
-        <CardHeader className="py-3">
-          <CardTitle className="text-sm">실시간 요약</CardTitle>
-        </CardHeader>
-        <CardContent className="py-0 pb-4">
-          <p className="text-xs text-muted-foreground mb-2">핵심 키워드:</p>
-          <div className="flex flex-wrap gap-1.5">
-            {realtimeKeywords.map((kw) => (
-              <Badge key={kw} variant="secondary" className="text-xs">
-                {kw}
-              </Badge>
-            ))}
           </div>
         </CardContent>
       </Card>
