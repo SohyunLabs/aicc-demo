@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { AppSwitcher } from "@/components/layout/app-switcher";
+import { brand } from "@/lib/brand-config";
 import { StepProfile } from "./steps/step-profile";
 import { StepTemplate } from "./steps/step-template";
 import { StepUpload } from "./steps/step-upload";
@@ -36,7 +37,7 @@ export function OnboardingWizard() {
 
       {/* 로고/타이틀 */}
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold">뤼튼 AICC 시작하기</h1>
+        <h1 className="text-2xl font-bold">{brand.onboardingTitle}</h1>
         <p className="text-muted-foreground mt-1">
           몇 가지 설정만으로 AI 컨택센터를 구축하세요
         </p>

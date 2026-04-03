@@ -4,6 +4,7 @@
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "./theme-toggle";
+import { brand } from "@/lib/brand-config";
 
 // 라우트별 페이지 타이틀 매핑
 const routeTitles: Record<string, string> = {
@@ -20,7 +21,7 @@ export function Header() {
   // 현재 경로에 맞는 타이틀 결정
   const title = routeTitles[pathname] ?? Object.entries(routeTitles).find(
     ([route]) => pathname.startsWith(route)
-  )?.[1] ?? "뤼튼 AICC";
+  )?.[1] ?? brand.displayName;
 
   return (
     <header className="flex h-14 items-center justify-between border-b bg-background px-6">
