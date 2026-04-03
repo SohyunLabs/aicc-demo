@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import type { TranscriptMessage, HandoffContext } from "@/types/aicc";
 
 interface TranscriptPanelProps {
@@ -28,7 +27,7 @@ const contextRows: { label: string; key: keyof HandoffContext }[] = [
 
 export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: TranscriptPanelProps) {
   return (
-    <div className="flex h-full flex-col gap-4">
+    <div className="space-y-4">
       {/* 핸드오프 컨텍스트 구조화 카드 */}
       <Card className="bg-muted/50">
         <CardHeader className="py-3">
@@ -56,13 +55,13 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
       </Card>
 
       {/* 실시간 전사 */}
-      <Card className="flex-1 flex flex-col min-h-0">
+      <Card>
         <CardHeader className="py-3">
           <CardTitle className="text-sm">실시간 전사</CardTitle>
         </CardHeader>
-        <CardContent className="flex-1 py-0 pb-3">
-          <ScrollArea className="h-[280px]">
-            <div className="space-y-3 pr-4">
+        <CardContent className="py-0 pb-3">
+          <div className="max-h-[280px] overflow-y-auto">
+            <div className="space-y-3 pr-2">
               {messages.map((msg) => {
                 const style = speakerStyles[msg.speaker];
                 return (
@@ -91,7 +90,7 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
                 );
               })}
             </div>
-          </ScrollArea>
+          </div>
         </CardContent>
       </Card>
 
@@ -100,7 +99,7 @@ export function TranscriptPanel({ messages, handoffContext, realtimeKeywords }: 
         <CardHeader className="py-3">
           <CardTitle className="text-sm">실시간 요약</CardTitle>
         </CardHeader>
-        <CardContent className="py-2">
+        <CardContent className="py-0 pb-4">
           <p className="text-xs text-muted-foreground mb-2">핵심 키워드:</p>
           <div className="flex flex-wrap gap-1.5">
             {realtimeKeywords.map((kw) => (
