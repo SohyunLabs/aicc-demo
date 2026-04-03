@@ -67,7 +67,7 @@ export function OnboardingWizard() {
                 </div>
                 <span
                   className={cn(
-                    "mt-2 text-xs hidden sm:block",
+                    "mt-2 text-xs hidden sm:block whitespace-nowrap",
                     currentStep >= step.id
                       ? "text-foreground font-medium"
                       : "text-muted-foreground/50"
