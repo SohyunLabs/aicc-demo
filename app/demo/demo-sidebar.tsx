@@ -28,7 +28,7 @@ import {
 const apps = [
   { id: "console", label: brand.consoleName, desc: "관리 콘솔", href: "/demo/dashboard" },
   { id: "agent-assist", label: "Agent Assist", desc: "상담원 실시간 보조", href: "/demo/agent-assist" },
-  { id: "onboarding", label: "온보딩", desc: "셀프 서비스 시작하기", href: "/onboarding" },
+  { id: "onboarding", label: "온보딩", desc: "셀프 서비스 시작하기", href: "/demo/onboarding" },
 ];
 
 // 콘솔 GNB

@@ -14,6 +14,7 @@ import { brand } from "@/lib/brand-config";
 
 interface AppSwitcherProps {
   current: "console" | "agent-assist" | "onboarding";
+  demo?: boolean;
 }
 
 const apps = [
@@ -22,8 +23,15 @@ const apps = [
   { id: "onboarding" as const, icon: Rocket, label: "온보딩", desc: "셀프 서비스 시작하기", href: "/onboarding" },
 ];
 
-export function AppSwitcher({ current }: AppSwitcherProps) {
-  const currentApp = apps.find((a) => a.id === current)!;
+const demoApps = [
+  { id: "console" as const, icon: null, label: brand.consoleName, desc: "관리 콘솔", href: "/demo/dashboard" },
+  { id: "agent-assist" as const, icon: Headset, label: "Agent Assist", desc: "상담원 실시간 보조", href: "/demo/agent-assist" },
+  { id: "onboarding" as const, icon: Rocket, label: "온보딩", desc: "셀프 서비스 시작하기", href: "/demo/onboarding" },
+];
+
+export function AppSwitcher({ current, demo }: AppSwitcherProps) {
+  const list = demo ? demoApps : apps;
+  const currentApp = list.find((a) => a.id === current)!;
 
   return (
     <DropdownMenu>
@@ -39,7 +47,7 @@ export function AppSwitcher({ current }: AppSwitcherProps) {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-56">
-        {apps.map((app, i) => (
+        {list.map((app, i) => (
           <div key={app.id}>
             {i > 0 && <DropdownMenuSeparator />}
             <DropdownMenuItem asChild>

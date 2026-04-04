@@ -22,7 +22,7 @@ const steps = [
   { id: 6, title: "요금제 선택" },
 ];
 
-export function OnboardingWizard() {
+export function OnboardingWizard({ demo }: { demo?: boolean } = {}) {
   const [currentStep, setCurrentStep] = useState(1);
 
   const goNext = () => setCurrentStep((prev) => Math.min(prev + 1, 6));
@@ -32,7 +32,7 @@ export function OnboardingWizard() {
     <div className="mx-auto max-w-4xl px-4 py-8">
       {/* 앱 스위처 */}
       <div className="mb-6">
-        <AppSwitcher current="onboarding" />
+        <AppSwitcher current="onboarding" demo={demo} />
       </div>
 
       {/* 로고/타이틀 */}
