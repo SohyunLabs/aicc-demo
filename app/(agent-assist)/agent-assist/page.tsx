@@ -1,8 +1,10 @@
 "use client";
 
-import { TranscriptPanel } from "@/components/agent-assist/transcript-panel";
+import { HandoffContextCard } from "@/components/agent-assist/handoff-context-card";
+import { TranscriptCard } from "@/components/agent-assist/transcript-card";
+import { CustomerInfoCard } from "@/components/agent-assist/customer-info-card";
+import { SentimentCard } from "@/components/agent-assist/sentiment-card";
 import { RecommendationPanel } from "@/components/agent-assist/recommendation-panel";
-import { CustomerPanel } from "@/components/agent-assist/customer-panel";
 import { CallStatusBar } from "@/components/agent-assist/call-status-bar";
 import {
   mockTranscript,
@@ -16,6 +18,9 @@ import {
 import { AppSwitcher } from "@/components/layout/app-switcher";
 
 // Agent Assist -- 풀스크린 3칼럼 상담원 보조 화면
+// 좌측 25%: 핸드오프 컨텍스트 + 고객 정보
+// 중앙 50%: 실시간 전사 + AI 추천 응답
+// 우측 25%: 감정 분석
 export default function AgentAssistPage() {
   return (
     <div className="flex h-screen flex-col">
@@ -29,29 +34,27 @@ export default function AgentAssistPage() {
 
       {/* 3칼럼 메인 영역 */}
       <div className="flex flex-1 overflow-hidden">
-        {/* 좌측 30%: 전사 + 컨텍스트 */}
-        <div className="w-[30%] border-r p-4 overflow-y-auto">
-          <TranscriptPanel
-            messages={mockTranscript}
+        {/* 좌측 25%: 핸드오프 컨텍스트 + 고객 정보 */}
+        <div className="w-[25%] border-r p-4 overflow-y-auto space-y-4">
+          <HandoffContextCard
             handoffContext={mockHandoffContext}
             realtimeKeywords={mockRealtimeKeywords}
           />
+          <CustomerInfoCard customer={mockCustomerInfo} />
         </div>
 
-        {/* 중앙 40%: AI 추천 + 컴플라이언스 */}
-        <div className="w-[40%] border-r p-4 overflow-y-auto">
+        {/* 중앙 50%: 실시간 전사 + AI 추천 응답 */}
+        <div className="w-[50%] border-r p-4 overflow-y-auto space-y-4">
+          <TranscriptCard messages={mockTranscript} />
           <RecommendationPanel
             recommendations={mockRecommendations}
             complianceAlerts={mockComplianceAlerts}
           />
         </div>
 
-        {/* 우측 30%: 고객 정보 + 감정 분석 */}
-        <div className="w-[30%] p-4 overflow-y-auto">
-          <CustomerPanel
-            customer={mockCustomerInfo}
-            sentiment={mockSentimentData}
-          />
+        {/* 우측 25%: 감정 분석 */}
+        <div className="w-[25%] p-4 overflow-y-auto">
+          <SentimentCard sentiment={mockSentimentData} />
         </div>
       </div>
 
