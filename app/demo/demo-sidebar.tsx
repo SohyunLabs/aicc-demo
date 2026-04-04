@@ -118,7 +118,7 @@ export function DemoSidebar() {
             <User className="h-4 w-4 text-sidebar-accent-foreground" />
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-sidebar-foreground">홍길동</p>
+            <p className="truncate text-sm font-medium text-sidebar-foreground">김지현</p>
             <p className="truncate text-xs text-sidebar-foreground/60">CS팀장</p>
           </div>
         </div>
