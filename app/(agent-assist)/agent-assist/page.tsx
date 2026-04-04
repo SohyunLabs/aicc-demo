@@ -27,27 +27,23 @@ export default function AgentAssistPage() {
         </span>
       </div>
 
-      {/* 3칼럼 메인 영역 */}
+      {/* 2컬럼 메인 영역 */}
       <div className="flex flex-1 overflow-hidden">
-        {/* 좌측 30%: 전사 + 컨텍스트 */}
-        <div className="w-[30%] border-r p-4 overflow-y-auto">
+        {/* 좌측 60%: 전사 + AI 추천응답(인라인) */}
+        <div className="w-[60%] border-r p-4 overflow-y-auto space-y-4">
           <TranscriptPanel
             messages={mockTranscript}
             handoffContext={mockHandoffContext}
             realtimeKeywords={mockRealtimeKeywords}
           />
-        </div>
-
-        {/* 중앙 40%: AI 추천 + 컴플라이언스 */}
-        <div className="w-[40%] border-r p-4 overflow-y-auto">
           <RecommendationPanel
             recommendations={mockRecommendations}
             complianceAlerts={mockComplianceAlerts}
           />
         </div>
 
-        {/* 우측 30%: 고객 정보 + 감정 분석 */}
-        <div className="w-[30%] p-4 overflow-y-auto">
+        {/* 우측 40%: 고객정보 + 핸드오프 컨텍스트 + 감정분석 */}
+        <div className="w-[40%] p-4 overflow-y-auto">
           <CustomerPanel
             customer={mockCustomerInfo}
             sentiment={mockSentimentData}
