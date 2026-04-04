@@ -1,7 +1,8 @@
-import { Building2, Users, Key, CreditCard, Bell, Check } from "lucide-react";
+import { Building2, Users, Key, CreditCard, Bell } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import {
   mockTenantSettings,
   mockUsers,
@@ -105,7 +106,7 @@ export default function SettingsPage() {
         </CardContent>
       </Card>
 
-      {/* 빌링 플랜 */}
+      {/* 빌링 */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
@@ -113,42 +114,28 @@ export default function SettingsPage() {
             빌링
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 md:grid-cols-3">
-            {mockBillingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-lg border p-4 space-y-3 ${plan.current ? "border-primary ring-1 ring-primary" : ""}`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold">{plan.name}</span>
-                  {plan.current && <Badge>현재</Badge>}
-                </div>
-                <p className="text-lg font-bold">
-                  {plan.price > 0 ? (
-                    <>₩{plan.price}만<span className="text-sm font-normal text-muted-foreground">/월</span></>
-                  ) : (
-                    "별도 협의"
-                  )}
-                </p>
-                <ul className="space-y-1">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <Check className="h-3 w-3 text-emerald-500 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  variant={plan.current ? "outline" : "default"}
-                  size="sm"
-                  className="w-full"
-                  disabled={plan.current}
-                >
-                  {plan.current ? "현재 플랜" : "선택"}
-                </Button>
-              </div>
-            ))}
+        <CardContent className="space-y-1">
+          <div className="flex items-center justify-between py-2 border-b">
+            <span className="text-sm text-muted-foreground">현재 플랜</span>
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium">{currentPlan?.name}</span>
+              <Badge>사용중</Badge>
+            </div>
+          </div>
+          <div className="flex items-center justify-between py-2 border-b">
+            <span className="text-sm text-muted-foreground">월 요금</span>
+            <span className="text-sm font-medium">₩{currentPlan?.price}만/월</span>
+          </div>
+          <div className="flex items-center justify-between py-2 border-b">
+            <span className="text-sm text-muted-foreground">포함 콜 수</span>
+            <span className="text-sm font-medium">{currentPlan?.callsIncluded.toLocaleString()}건</span>
+          </div>
+          <div className="flex items-center justify-between py-2">
+            <span className="text-sm text-muted-foreground">다음 결제일</span>
+            <span className="text-sm font-medium">2026-05-01</span>
+          </div>
+          <div className="pt-3">
+            <Button variant="outline" size="sm">Enterprise로 업그레이드</Button>
           </div>
         </CardContent>
       </Card>
@@ -163,12 +150,18 @@ export default function SettingsPage() {
         </CardHeader>
         <CardContent className="space-y-1">
           <div className="flex items-center justify-between py-2 border-b">
-            <span className="text-sm">컴플라이언스 경고 알림</span>
-            <span className="text-xs text-muted-foreground">미설정</span>
+            <div className="flex flex-col">
+              <span className="text-sm">컴플라이언스 경고 알림</span>
+              <span className="text-xs text-muted-foreground">위반 감지 시 즉시 알림</span>
+            </div>
+            <Switch defaultChecked />
           </div>
           <div className="flex items-center justify-between py-2">
-            <span className="text-sm">일일 리포트 이메일</span>
-            <span className="text-xs text-muted-foreground">미설정</span>
+            <div className="flex flex-col">
+              <span className="text-sm">일일 리포트 이메일</span>
+              <span className="text-xs text-muted-foreground">매일 09:00 요약 리포트 발송</span>
+            </div>
+            <Switch defaultChecked />
           </div>
         </CardContent>
       </Card>
