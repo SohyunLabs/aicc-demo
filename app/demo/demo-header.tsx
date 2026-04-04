@@ -11,6 +11,7 @@ const routeTitles: Record<string, string> = {
   "/demo/monitoring": "모니터링",
   "/demo/knowledge-empty": "지식 관리",
   "/demo/settings": "설정",
+  "/demo/agent-assist": "Agent Assist",
 };
 
 export function DemoHeader() {
