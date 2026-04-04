@@ -1,68 +1,36 @@
-"use client";
-
-// 카테고리별 분포 파이 차트
-// Recharts는 DOM 조작이 필요하므로 Client Component 필수
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Tooltip,
-  Legend,
-} from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { CategoryDistribution } from "@/types/dashboard";
 
-// CSS 변수 대신 실제 색상 값 매핑 (Recharts SVG에서 CSS 변수가 작동하지 않을 수 있음)
-const CHART_COLORS = [
-  "hsl(220, 70%, 50%)",  // chart-1
-  "hsl(160, 60%, 45%)",  // chart-2
-  "hsl(30, 80%, 55%)",   // chart-3
-  "hsl(280, 65%, 60%)",  // chart-4
-  "hsl(340, 75%, 55%)",  // chart-5
+// 전체 문의 대비 점유율 (합계 100%)
+const categories = [
+  { name: "결제/환불", percent: 32, color: "bg-blue-500" },
+  { name: "배송 조회", percent: 26, color: "bg-emerald-500" },
+  { name: "상품 문의", percent: 20, color: "bg-amber-400" },
+  { name: "계정 문제", percent: 14, color: "bg-pink-500" },
+  { name: "기타", percent: 8, color: "bg-gray-400" },
 ];
 
-interface CategoryChartProps {
-  data: CategoryDistribution[];
-}
+const maxPercent = Math.max(...categories.map((c) => c.percent));
 
-export function CategoryChart({ data }: CategoryChartProps) {
+export function CategoryChart() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>카테고리 분포</CardTitle>
+    <Card className="h-full">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-base">카테고리별 문의</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="h-[300px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={data}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                outerRadius={100}
-                label={({ name, value }) => `${name} ${value}%`}
-              >
-                {data.map((_, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={CHART_COLORS[index % CHART_COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Tooltip
-                formatter={(value) => [`${value}%`, "비율"]}
-                contentStyle={{
-                  backgroundColor: "var(--color-card)",
-                  border: "1px solid var(--color-border)",
-                  borderRadius: "8px",
-                }}
-              />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
+        <div className="space-y-5 pt-2">
+          {categories.map((cat) => (
+            <div key={cat.name} className="flex items-center gap-4">
+              <span className="text-sm text-muted-foreground w-20 shrink-0 text-right">{cat.name}</span>
+              <div className="flex-1 h-3 rounded-full bg-muted overflow-hidden">
+                <div
+                  className={`h-full rounded-full ${cat.color}`}
+                  style={{ width: `${(cat.percent / maxPercent) * 100}%` }}
+                />
+              </div>
+              <span className="text-sm font-medium w-10 text-right">{cat.percent}%</span>
+            </div>
+          ))}
         </div>
       </CardContent>
     </Card>
