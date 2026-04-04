@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { LayoutDashboard, GitBranch, Activity, BookOpen, Settings } from "lucide-react";
+import { LayoutDashboard, GitBranch, Activity, Headset, BookOpen, Settings } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const pages = [
   { icon: LayoutDashboard, label: "대시보드", desc: "KPI 카드 + 차트 빈 상태", href: "/demo/dashboard" },
   { icon: GitBranch, label: "시나리오 빌더", desc: "시나리오 생성 전 빈 상태", href: "/demo/scenarios" },
   { icon: Activity, label: "모니터링", desc: "실시간 모니터링 빈 상태", href: "/demo/monitoring" },
+  { icon: Headset, label: "Agent Assist", desc: "컴플라이언스 경고 인라인 시나리오", href: "/demo/agent-assist" },
   { icon: BookOpen, label: "지식 관리", desc: "문서/토픽 업로드 전 빈 상태", href: "/demo/knowledge-empty" },
   { icon: Settings, label: "설정", desc: "조직/팀/API/알림 초기 상태", href: "/demo/settings" },
 ];

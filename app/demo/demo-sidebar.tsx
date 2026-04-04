@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   GitBranch,
   Activity,
+  Headset,
   BookOpen,
   Settings,
   User,
@@ -18,6 +19,7 @@ const navItems = [
   { icon: LayoutDashboard, label: "대시보드", href: "/demo/dashboard" },
   { icon: GitBranch, label: "시나리오 빌더", href: "/demo/scenarios" },
   { icon: Activity, label: "모니터링", href: "/demo/monitoring" },
+  { icon: Headset, label: "Agent Assist", href: "/demo/agent-assist" },
   { icon: BookOpen, label: "지식 관리", href: "/demo/knowledge-empty" },
   { icon: Settings, label: "설정", href: "/demo/settings" },
 ];
